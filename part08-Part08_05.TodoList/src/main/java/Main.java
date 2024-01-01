@@ -12,5 +12,16 @@ public class Main {
         UserInterface ui = new UserInterface(list, scanner);
         ui.start();
 
+        // list.add("iets doen");
+        // list.add("nog iets doen");
+        // list.add("andermaal iets doen");
+        // list.add("een vierde taak");
+
+        // list.print();
+
+        // list.remove(3);
+        // System.out.println("");
+        // list.print();
+
     }
 }
