@@ -36,6 +36,7 @@ public class SimpleDate {
     }
 
     public int differenceInYears(SimpleDate other) {
+        
         if (earlier(other)) {
             return other.differenceInYears(this);
         }
@@ -49,6 +50,28 @@ public class SimpleDate {
         }
 
         return this.year - other.year - yearRemoved;
+    }
+
+    public boolean equals(Object object){
+        //if they're the same return true
+        if(this == object) return true;
+
+        // check instance of
+        if(! (object instanceof SimpleDate)) return false;
+
+        // cast away
+        SimpleDate object2 = (SimpleDate) object;
+
+        // check parameters
+        if (
+            this.day == object2.day &&
+            this.month == object2.month &&
+            this.year == object2.year
+        ){
+            return true;
+        }
+
+        return false;
     }
 
 }
