@@ -19,4 +19,37 @@ public class LicensePlate {
         return country + " " + liNumber;
     }
 
+    
+    public boolean equals(Object obj){
+        //is it the same object
+        if (this == obj) return true;
+
+        //is it an instance of
+        if (!(obj instanceof LicensePlate)) return false;
+
+        //if yes, cast the object to type LicensePlate
+        LicensePlate cast = (LicensePlate) obj;
+
+        //instance variables the same?
+        if((this.liNumber.equals(cast.liNumber)) &&
+            (this.country.equals(cast.country))
+        ){
+                return true;
+            }
+
+        //if not return false
+        return false;
+    }
+
+    public int hashCode(){
+        
+        int country = this.country.hashCode();
+        int number = this.liNumber.hashCode();
+        
+        int hash = 31 * country * number;
+
+        return hash;
+
+    }
+
 }

@@ -31,5 +31,16 @@ public class Main {
         System.out.println(owners.get(new LicensePlate("FI", "ABC-123")));
         System.out.println(owners.get(new LicensePlate("D", "B WQ-431")));
         // if the hasCode-method hasn't been overwritten, the owners won't be found
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        VehicleRegistry vr = new VehicleRegistry(); 
+
+        vr.add( new LicensePlate("FI", "AAA-111"), "Arto");
+        vr.add( new LicensePlate("FI", "BBB-222"), "Pekka");
+        vr.add( new LicensePlate("FI", "CCC-333"), "Arto");
+        vr.printOwners();
+
     }
 }
