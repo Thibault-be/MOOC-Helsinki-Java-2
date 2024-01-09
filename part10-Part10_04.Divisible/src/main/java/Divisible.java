@@ -19,7 +19,17 @@ public class Divisible {
     }
 
     public static ArrayList<Integer> divisible(ArrayList<Integer> numbers) {
-        return new ArrayList<>();
+        
+        ArrayList<Integer> returnList = new ArrayList<>();
+
+        for (int num : numbers){
+            if (num%2 == 0 || num%3 == 0 || num%5 == 0){
+                returnList.add(num);
+            }
+        }
+        
+        
+        return returnList;
     }
 
 }
