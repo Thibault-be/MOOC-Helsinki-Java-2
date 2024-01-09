@@ -13,7 +13,8 @@ public class LiteracyComparison {
             Files.lines(Paths.get("literacy.csv"))
             .map(line -> line.split(","))
             .sorted((line1, line2) -> Double.compare(Double.parseDouble(line1[5]), Double.parseDouble(line2[5])))
-            .forEach(line -> System.out.println(Arrays.toString(line)));
+            .map(line -> line[3] + " (" + line[4]+"), " + line[2].replaceAll("[^a-zA-z]", "") + ", " + line[5])
+            .forEach(line -> System.out.println(line));
         } catch (Exception e){
             System.out.println("Error: " + e.getMessage());
             e.printStackTrace();
