@@ -12,6 +12,26 @@ public class ReadingFilesPerLine {
         Scanner scanner = new Scanner(System.in);
         // test the method here
 
+
+    }
+    
+    public static List<String> read(String file){
+
+        List<String> lines = new ArrayList<>();
+
+        try{
+            Files.lines(Paths.get(file)).forEach(line -> lines.add(line));
+
+        } catch (Exception e){
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        return lines;
     }
 
 }
+
+/*
+ * Implement the static method public static List<String> read(String file), 
+ * which reads the file with the filename of the parameter and returns the lines as a string list.
+ */
