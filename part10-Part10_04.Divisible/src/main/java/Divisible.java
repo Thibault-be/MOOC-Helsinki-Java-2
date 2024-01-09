@@ -26,9 +26,7 @@ public class Divisible {
             if (num%2 == 0 || num%3 == 0 || num%5 == 0){
                 returnList.add(num);
             }
-        }
-        
-        
+        }   
         return returnList;
     }
 
