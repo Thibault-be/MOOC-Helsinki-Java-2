@@ -15,8 +15,11 @@ public class MainProgram {
         /*
          * Uncomment the comment below when you have completed the compareTo-method.
          */
-        //Collections.sort(humans);
+        Collections.sort(humans);
+        System.out.println("pritn print print");
         System.out.println(humans);
 
     }
 }
+
+
