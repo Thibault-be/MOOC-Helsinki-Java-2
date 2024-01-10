@@ -1,6 +1,6 @@
+import java.util.Comparator;
 
-
-public class Card {
+public class Card implements Comparable<Card> {
 
     private int value;
     private Suit suit;
@@ -37,5 +37,18 @@ public class Card {
     public Suit getSuit() {
         return suit;
     }
+
+    public int compareTo(Card card){
+        if (this.value == card.getValue()) {
+            //club first, diamond second, heart third, and spade last.
+            return this.suit.ordinal() - card.getSuit().ordinal();
+        } else         if (this.value > card.getValue()){
+            return 1;
+        } else{
+            return -1;
+        } 
+    }
+
+
 
 }
