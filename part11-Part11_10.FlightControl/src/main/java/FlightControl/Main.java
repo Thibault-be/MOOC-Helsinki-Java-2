@@ -1,6 +1,8 @@
 package FlightControl;
 
 import java.util.Scanner;
+
+import FlightControl.logic.FlightControl;
 import FlightControl.ui.UserInterface;
 
 public class Main {
@@ -9,7 +11,9 @@ public class Main {
         // Write the main program here. It is useful to create some classes of your own.
 
         Scanner scanner = new Scanner(System.in);
+        FlightControl flightControl = new FlightControl();
 
-        UserInterface ui = new UserInterface(scanner);
+        UserInterface ui = new UserInterface(flightControl, scanner);
+        ui.start();
     }
 }
