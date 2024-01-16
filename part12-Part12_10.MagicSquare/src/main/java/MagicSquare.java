@@ -17,16 +17,60 @@ public class MagicSquare {
 
     // implement these three methods
     public ArrayList<Integer> sumsOfRows() {
-        return new ArrayList<>();
+        ArrayList<Integer> rowSumArray = new ArrayList<>();
+
+        for (int row = 0; row <  this.square.length; row++){
+
+            int colSum = 0;
+            for (int col = 0; col < this.square[row].length; col++){
+                colSum += this.square[row][col];
+            }
+            rowSumArray.add(colSum);
+        }
+        
+        return rowSumArray;
     }
 
     public ArrayList<Integer> sumsOfColumns() {
-        return new ArrayList<>();
+         ArrayList<Integer> colSumArray = new ArrayList<>();
+
+        for (int col = 0; col <  this.square[0].length; col++){
+
+            int colSum = 0;
+            for (int row = 0; row < this.square.length; row++){
+                colSum += this.square[row][col];
+            }
+            colSumArray.add(colSum);
+        }
+        
+        return colSumArray;
     }
 
     public ArrayList<Integer> sumsOfDiagonals() {
-        return new ArrayList<>();
+        ArrayList<Integer> diagonalSumArray = new ArrayList<>();
+
+        int diagonalSum = 0;
+        for (int i = 0; i < this.square.length; i++){
+            diagonalSum += this.square[i][i];
+        }
+        diagonalSumArray.add(diagonalSum);
+
+        int otherDiagonalSum = 0;
+        int row = 0;
+        int col = this.square.length-1;
+        for (int j = this.square.length-1; j >= 0; j--){
+            otherDiagonalSum += this.square[row][col];
+            row++;
+            col--;
+        }
+        diagonalSumArray.add(otherDiagonalSum);
+
+        return diagonalSumArray;
+
+
+
     }
+    
 
     // ready-made helper methods -- don't touch these
     public boolean isMagicSquare() {
